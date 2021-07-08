@@ -1,0 +1,12 @@
+{
+    "buildOptions": {
+        "incremental": true
+    },
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "allowJs": false,
+        "outDir": "./dist"
+    },
+}
