@@ -7,5 +7,7 @@ app.get('/test', function (req, res, next) {
         hello: 'world'
     });
 });
-app.listen(3000);
+app.listen(3000, function () {
+    console.log('App started');
+});
 //# sourceMappingURL=index.js.map
