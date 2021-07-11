@@ -8,7 +8,7 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY --chown=app:app . /app/
+COPY . ./
 
 # ENV TEST_KEY_FOR_PIPELINE=eren
 # ENV PORT=4500
