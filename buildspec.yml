@@ -17,8 +17,9 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the production Docker image...
-      - docker build -t pipeline-test:latest .
+      - docker build -t 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test/pipeline-test:latest .
   post_build:
     commands:
       # Take these images and push them to Docker hub
       - echo Pushing the Docker images...
+      - docker push 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test/pipeline-test:latest
