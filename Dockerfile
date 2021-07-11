@@ -10,9 +10,11 @@ RUN npm install
 
 COPY . .
 
-ENV TEST_KEY_FOR_PIPELINE=eren
-ENV PORT=4500
+# ENV TEST_KEY_FOR_PIPELINE=eren
+# ENV PORT=4500
 
 RUN npm run build
 
 EXPOSE 4500
+
+CMD ["npm", "start"]
