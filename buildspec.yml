@@ -15,11 +15,6 @@ phases:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
   build:
     commands:
-      - echo creating ENV file
-      - touch .env
-      - ls -l .env
-      - echo PORT=8080 > .env
-      - ls
       - echo Build started on `date`
       - echo Building the production Docker image...
       - docker build -t pipeline-test .
