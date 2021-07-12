@@ -11,7 +11,9 @@ phases:
     commands:
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &
       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
-      - aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 754461976050.dkr.ecr.eu-central-1.amazonaws.com
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - export PORT=4500
       - export TEST_KEY_FOR_PIPELINE=$TEST_KEY_FOR_PIPELINE
   build:
