@@ -13,10 +13,11 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - export PORT=80
-      - export TEST_KEY_FOR_PIPELINE=$TEST_KEY_FOR_PIPELINE
   build:
     commands:
+      - echo creating ENV file
+      - echo PORT=80 > .env
+      - echo TEST_KEY_FOR_PIPELINE=$TEST_KEY_FOR_PIPELINE >> .env
       - echo Build started on `date`
       - echo Building the production Docker image...
       - docker build -t pipeline-test .
