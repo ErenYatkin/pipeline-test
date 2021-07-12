@@ -16,6 +16,8 @@ phases:
   build:
     commands:
       - echo creating ENV file
+      - touch .env
+      - ls -l .env
       - echo PORT=8080 > .env
       - ls
       - echo Build started on `date`
