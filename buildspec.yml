@@ -17,6 +17,7 @@ phases:
     commands:
       - echo creating ENV file
       - echo PORT=8080 > .env
+      - ls
       - echo Build started on `date`
       - echo Building the production Docker image...
       - docker build -t pipeline-test .
