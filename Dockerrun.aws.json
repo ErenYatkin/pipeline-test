@@ -1,0 +1,7 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "Image": {
+    "Name": "bitnami/nginx:latest",
+    "Update": "true"
+  }
+}
