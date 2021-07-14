@@ -14,6 +14,7 @@ phases:
     commands:
       - echo Build Started
       - npm run build
-  artifacts:
+artifacts: 
   files:
-    - "[directory_name]/**/*"
+    - package.json
+    - package-lock.json
