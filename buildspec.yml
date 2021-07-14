@@ -5,7 +5,7 @@ env:
 phases:
   install:
     runtime-versions:
-      node: 14
+      nodejs: 14
   pre_build:
     commands:
       - npm install typescript -g
