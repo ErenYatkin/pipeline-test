@@ -12,10 +12,11 @@ phases:
       - chmod 755 scripts/*
       - ./scripts/installNVM.sh
       - echo Installing Node 14
-      - which nvm
-      - nvm install 14
       - node --version
-      - npm --version
+      # - which nvm
+      # - nvm install 14
+      # - node --version
+      # - npm --version
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &
       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
       - echo Logging in to Amazon ECR...
