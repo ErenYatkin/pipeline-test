@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index",
     "build": "rm -rf ./dist && ./node_modules/typescript/bin/tsc",
-    "test": "echo Testing started && exit 1"
+    "test": "echo Testing started"
   },
   "repository": {
     "type": "git",
