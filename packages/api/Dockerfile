@@ -7,6 +7,8 @@ COPY package*.json ./
 
 RUN npm install
 
+RUN ls
+
 COPY . ./
 
 RUN npm run build
@@ -21,6 +23,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 COPY . ./
+
+RUN ls
 
 COPY --from=development /usr/src/app/dist ./dist
 
