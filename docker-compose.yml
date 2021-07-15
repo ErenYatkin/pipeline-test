@@ -19,7 +19,7 @@ services:
         links:
             - "mysql57:db"
         environment:
-            - PORT=3000
+            - PORT=8080
             - TYPEORM_CONNECTION=mysql
             - TYPEORM_HOST=db
             - TYPEORM_USERNAME=root
