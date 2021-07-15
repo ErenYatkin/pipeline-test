@@ -22,7 +22,8 @@ phases:
     commands:
       - echo Build started
       - echo Building the production Docker image...
-      - docker build . -t pipeline-test -f packages/api/Dockerfile --target=production
+      - cd ./packages/api
+      - docker build . -t pipeline-test
       - docker tag pipeline-test:latest 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
   post_build:
     commands:
