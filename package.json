@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index",
-    "build": "rm -rf ./dist && ./node_modules/typescript/bin/tsc"
+    "build": "rm -rf ./dist && ./node_modules/typescript/bin/tsc",
+    "test": "echo Testing started && exit 1"
   },
   "repository": {
     "type": "git",
