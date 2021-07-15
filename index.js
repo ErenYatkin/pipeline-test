@@ -1,1 +1,1 @@
-console.log(process.env.TEST_KEY_FOR_PIPELINE);
+console.log(process.env);
