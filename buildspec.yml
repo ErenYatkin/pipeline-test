@@ -6,7 +6,7 @@ phases:
   install:
     runtime-versions:
       docker: 19
-      nodejs: 12
+      nodejs: 14
   pre_build:
     commands:
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &
@@ -14,7 +14,12 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - npm run test
+      - npm install
+      - chmod 755 scripts/*
+      - echo Testing
+      - ./scripts/test.sh
+      - echo Migration Started
+      - ./scripts/migration.sh
   build:
     commands:
       - echo Build started
