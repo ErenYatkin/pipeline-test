@@ -7,8 +7,6 @@ COPY package*.json ./
 
 RUN npm install
 
-RUN ls
-
 COPY . ./
 
 RUN npm run build
@@ -24,13 +22,7 @@ COPY package*.json ./
 
 COPY . ./
 
-RUN ls
-
 COPY --from=development /usr/src/app/dist ./dist
-
-RUN npm install
-
-RUN npm run build
 
 EXPOSE 3000
 
