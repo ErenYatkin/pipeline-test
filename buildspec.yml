@@ -1,13 +1,4 @@
 version: 0.2
-env:
-    parameter-store:
-        TEST_KEY: TEST_KEY_FOR_PIPELINE
-    secrets-manager:
-        TEST_KEY_FOR_PIPELINE: TEST_KEY_FOR_PIPELINE
-    exported-variables:
-      - TEST_KEY
-      - TEST_KEY_FOR_PIPELINE
-      - CODEBUILD_BUILD_ID
 phases:
   install:
     runtime-versions:
