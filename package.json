@@ -7,7 +7,7 @@
     "start": "node dist/index",
     "build": "rm -rf ./dist && ./node_modules/typescript/bin/tsc",
     "test": "echo Testing started",
-    "migration": "echo migration started"
+    "migration": "node index.js"
   },
   "repository": {
     "type": "git",
