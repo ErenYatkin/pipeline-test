@@ -9,6 +9,7 @@ phases:
   pre_build:
     commands:
       - echo Installing NVM
+      - chmod 755 scripts/*
       - ./scripts/installNVM.sh
       - echo Installing Node 14
       - nvm install 14
