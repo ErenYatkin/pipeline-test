@@ -1,0 +1,10 @@
+import { 
+    ApolloClient,
+    InMemoryCache,
+    //useQueerry to fetch data 
+ } from "@apollo/client";
+
+export const client = new ApolloClient({
+    uri:  process.env.REACT_APP_GRAPHQL,
+    cache: new InMemoryCache()
+});

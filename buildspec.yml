@@ -11,17 +11,18 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - npm install
-      - chmod 755 scripts/*
+      - npm install lerna -g
+      - lerna bootstrap
+      - chmod 755 packages/api/scripts/*
       - echo Testing
-      - ./scripts/test.sh
+      - # ./scripts/test.sh
       - echo Migration Started
-      - ./scripts/migration.sh
+      - # ./scripts/migration.sh
   build:
     commands:
       - echo Build started
       - echo Building the production Docker image...
-      - docker build -t pipeline-test .
+      - ./packages/api/scripts/build.sh
       - docker tag pipeline-test:latest 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
   post_build:
     commands:

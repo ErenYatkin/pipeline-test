@@ -1,7 +1,0 @@
-{
-  "AWSEBDockerrunVersion": "1",
-  "Image": {
-    "Name": "754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest",
-    "Update": "true"
-  }
-}
