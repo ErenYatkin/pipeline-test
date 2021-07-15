@@ -12,6 +12,7 @@ phases:
       - chmod 755 scripts/*
       - ./scripts/installNVM.sh
       - echo Installing Node 14
+      - which nvm
       - nvm install 14
       - node --version
       - npm --version
