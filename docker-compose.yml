@@ -6,7 +6,7 @@ services:
         build:
             context: .
             target: development
-            dockerfile: Dockerfile.api
+            dockerfile: Dockerfile
         command: npm run start:debug
         networks:
             - ysi-admin-network
