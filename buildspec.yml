@@ -22,6 +22,7 @@ phases:
     commands:
       - echo Build started
       - echo Building the production Docker image...
+      - pwd
       - docker build . -t pipeline-test -f ./Dockerfile.api
       - docker tag pipeline-test:latest 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
   post_build:
