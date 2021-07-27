@@ -5,7 +5,7 @@ RUN chmod -R 777 /usr/src/app
 
 RUN npm install -g lerna
 
-RUN lerna bootstrap
+RUN lerna bootstrap --scope=api
 
 COPY packages/api/package*.json ./
 
