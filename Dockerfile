@@ -3,9 +3,13 @@ FROM node:14.17-alpine AS development
 WORKDIR /usr/src/app
 RUN chmod -R 777 /usr/src/app
 
+RUN npm install -g lerna
+
+RUN lerna bootstrap
+
 COPY packages/api/package*.json ./
 
-RUN npm install
+## RUN npm install
 
 COPY packages/api/. ./
 
