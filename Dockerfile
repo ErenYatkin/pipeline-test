@@ -9,8 +9,6 @@ RUN npm install
 
 COPY packages/api/. ./
 
-RUN pwd
-
 RUN npm run build
 
 FROM node:14.17-alpine AS production
