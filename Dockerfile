@@ -22,4 +22,4 @@ COPY --from=0 /usr/src/app/dist ./dist
 
 EXPOSE 8080
 
-CMD ["node", "dist/main"]
+CMD ["npm", "start"]
