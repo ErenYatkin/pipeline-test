@@ -6,8 +6,7 @@ RUN chmod -R 777 /usr/src/app
 COPY packages/api/package*.json ./
 COPY packages/api/. ./
 
-RUN npm i -g @nestjs/cli
-RUN npm install  --production
+RUN npm install
 RUN npm run build
 
 FROM node:12-alpine
