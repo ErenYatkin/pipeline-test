@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:14-alpine
 
 WORKDIR /usr/src/app
 RUN chmod -R 777 /usr/src/app
@@ -10,7 +10,7 @@ RUN npm i -g @nestjs/cli
 RUN npm install  --production
 RUN npm run build
 
-FROM node:12-alpine
+FROM node:14-alpine
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
