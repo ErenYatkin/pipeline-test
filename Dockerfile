@@ -1,4 +1,4 @@
-FROM node:14.17-alpine
+FROM node:12
 
 WORKDIR /usr/src/app
 RUN chmod -R 777 /usr/src/app
@@ -9,7 +9,7 @@ COPY packages/api/. ./
 RUN npm install
 RUN npm run build
 
-FROM node:14.17-alpine
+FROM node:12
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
