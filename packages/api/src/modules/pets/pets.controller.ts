@@ -3,7 +3,6 @@ import { ConfigService } from '@nestjs/config';
 import { Pets } from 'src/entities/Pets';
 import { CustomLogger } from '../loggerModule/logger.service';
 import PetsService from './pets.service';
-import { Relations } from 'src/entities/Relations';
 
 @Controller('pets')
 export class PetsController {
@@ -16,7 +15,6 @@ export class PetsController {
   }
 
   @Get()
-  // @UseGuards(AuthGuard('jwt'))
   async Pets(): Promise<Pets[]> {
     return this.petsService.GetAll();
   }

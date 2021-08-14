@@ -13,11 +13,6 @@ phases:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - npm install lerna -g
       - lerna bootstrap --scope=api
-      - chmod 755 packages/api/scripts/*
-      - echo Testing
-      - # ./scripts/test.sh
-      - echo Migration Started
-      - # ./scripts/migration.sh
   build:
     commands:
       - echo Build started
