@@ -12,15 +12,18 @@ phases:
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - npm install lerna -g
-      - lerna bootstrap --scope=api
+      - lerna bootstrap
   build:
     commands:
       - echo Build started
       - echo Building the production Docker image...
       - docker build . -t pipeline-test
-      - docker tag pipeline-test:latest 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
+      # - docker tag pipeline-test:latest 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
+      - lerna run build --scope=ui
   post_build:
     commands:
       # Take these images and push them to Docker hub
       - echo Pushing the Docker images...
-      - docker push 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
+      # - docker push 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
+      - echo Pushing the output to S3
+      - aws s3 cp packages/ui/build/* s3://s3testdeploy
