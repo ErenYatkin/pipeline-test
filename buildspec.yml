@@ -26,4 +26,4 @@ phases:
       - echo Pushing the Docker images...
       # - docker push 754461976050.dkr.ecr.eu-central-1.amazonaws.com/pipeline-test:latest
       - echo Pushing the output to S3
-      - aws s3 cp --recursive --debug packages/ui/build/* s3://s3testdeploy
+      - aws s3 cp --recursive --debug packages/ui/build/ s3://s3testdeploy/
