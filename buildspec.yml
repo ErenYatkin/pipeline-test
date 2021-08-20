@@ -12,7 +12,7 @@ phases:
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - npm install lerna -g
-      - lerna bootstrap
+      - lerna bootstrap --scope=api
   build:
     commands:
       - echo Build started
