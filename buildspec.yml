@@ -1,7 +1,7 @@
 version: 0.2
 env:
   parameter-store:
-    dockerUsername: $test_cred
+    dockerUsername: test_cred
 phases:
   install:
     runtime-versions:
